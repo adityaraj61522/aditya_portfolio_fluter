@@ -107,6 +107,7 @@ class ImageTextCell extends StatelessWidget {
     this.textAlignment = TextAlign.start,
     this.borderRadius = 0,
     this.onTap,
+    this.trimImgBorder=false,
   }) : super(key: key);
   final String? img;
   final double? height;
@@ -123,6 +124,7 @@ class ImageTextCell extends StatelessWidget {
   final TextAlign textAlignment;
   final double borderRadius;
   final VoidCallback? onTap;
+  final bool trimImgBorder;
 
   @override
   Widget build(Object context) {
@@ -146,11 +148,14 @@ class ImageTextCell extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (img != null) ...[
-              Image.network(
-                        img!,
-                        height: imgHeight,
-                        width: imgWidth,
-                      ),
+              ClipRRect(
+  borderRadius: BorderRadius.circular(trimImgBorder?borderRadius:0),
+  child:  Image.network(
+                          img!,
+                          height: imgHeight,
+                          width: imgWidth,
+                        ),
+              ),
               SizedBox(
                 height: spaceBetweenImgAndText,
               ),
@@ -210,6 +215,7 @@ class CommonButton extends StatelessWidget {
                         img!,
               width: 60,
               height: 40,
+              color: Colors.white,
                       ),
             SizedBox(
               height: spaceBetweenImgAndText,
@@ -219,6 +225,8 @@ class CommonButton extends StatelessWidget {
             Text(
               text!,
               textAlign: TextAlign.center,
+              style: const TextStyle(color: Colors.white
+              ),
             ),
           ],
         ],

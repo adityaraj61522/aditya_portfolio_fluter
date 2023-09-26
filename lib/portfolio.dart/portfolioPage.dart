@@ -89,13 +89,13 @@ class PortfolioPage
                   ImageTextCell(
                     img: controller
                         .profilePhoto,
-                    imgHeight:
-                        constraints
-                            .maxWidth,
-                    imgWidth: constraints
+                    height: constraints
+                        .maxWidth,
+                    width: constraints
                             .maxHeight /
                         2.5,
                     borderRadius: 20,
+                    trimImgBorder: true,
                   ),
                   const Spacer(
                     flex: 2,
