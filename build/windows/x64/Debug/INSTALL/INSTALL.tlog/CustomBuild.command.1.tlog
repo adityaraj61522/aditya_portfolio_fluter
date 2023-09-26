@@ -1,0 +1,10 @@
+^C:\USERS\ADITYA\DESKTOP\ADITYA_PORTFOLIO_FLUTER\BUILD\WINDOWS\CMAKEFILES\D333AB6C69B4F47E8046437BE73F7E05\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
