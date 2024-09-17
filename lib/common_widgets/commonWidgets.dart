@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CommonDivider extends StatelessWidget {
   const CommonDivider({Key? key, this.direction}) : super(key: key);
@@ -107,7 +106,7 @@ class ImageTextCell extends StatelessWidget {
     this.textAlignment = TextAlign.start,
     this.borderRadius = 0,
     this.onTap,
-    this.trimImgBorder=false,
+    this.trimImgBorder = false,
   }) : super(key: key);
   final String? img;
   final double? height;
@@ -148,13 +147,16 @@ class ImageTextCell extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (img != null) ...[
-              ClipRRect(
-  borderRadius: BorderRadius.circular(trimImgBorder?borderRadius:0),
-  child:  Image.network(
-                          img!,
-                          height: imgHeight,
-                          width: imgWidth,
-                        ),
+              IntrinsicHeight(
+                child: ClipRRect(
+                  borderRadius:
+                      BorderRadius.circular(trimImgBorder ? borderRadius : 0),
+                  child: Image.network(
+                    img!,
+                    height: imgHeight,
+                    width: imgWidth,
+                  ),
+                ),
               ),
               SizedBox(
                 height: spaceBetweenImgAndText,
@@ -211,12 +213,12 @@ class CommonButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (img != null) ...[
-              Image.network(
-                        img!,
+            Image.network(
+              img!,
               width: 60,
               height: 40,
               color: Colors.white,
-                      ),
+            ),
             SizedBox(
               height: spaceBetweenImgAndText,
             ),
@@ -225,8 +227,7 @@ class CommonButton extends StatelessWidget {
             Text(
               text!,
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.white
-              ),
+              style: const TextStyle(color: Colors.white),
             ),
           ],
         ],

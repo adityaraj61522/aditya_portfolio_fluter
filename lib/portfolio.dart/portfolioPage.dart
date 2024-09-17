@@ -164,7 +164,7 @@ class PortfolioPage extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          ImageTextCell(
+          const ImageTextCell(
             text: "Introduction",
             width: 200,
             height: 50,
@@ -194,7 +194,7 @@ class PortfolioPage extends StatelessWidget {
             dot: true,
           ),
           30.verticalSpace,
-          CommonButton(
+          const CommonButton(
             text: "Contact Me",
             height: 50,
             width: 200,
@@ -441,7 +441,7 @@ class PortfolioPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ImageTextCell(
+        const ImageTextCell(
           text: "Projects",
           width: 200,
           height: 50,
@@ -459,7 +459,7 @@ class PortfolioPage extends StatelessWidget {
               borderRadius: 20,
             ),
             20.horizontalSpace,
-            Container(
+            SizedBox(
               width: constraints.maxWidth / 2.5,
               child: Column(
                 children: [
